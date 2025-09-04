@@ -1,0 +1,12 @@
+{
+  "name": "{{exportFilename}}",
+  "title": "{{title}}",
+  "author": { "name": "{{author}}" },
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "slidev build --out ../../../dist/pva2/{{exportFilename}} --base $BASE_PATH/{{exportFilename}}",
+    "dev": "slidev",
+    "export": "slidev export --output ../{{exportFilename}}"
+  }
+}

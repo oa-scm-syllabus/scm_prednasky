@@ -1,0 +1,26 @@
+node_modules
+dist
+.site
+.DS_Store
+dist
+*.local
+.vite-inspect
+.remote-assets
+components.d.ts
+*-export*
+*.pdf
+*.pptx
+
+# Ignorovat node_modules v adresáři slides
+slides/**/node_modules/
+
+# Ignorovat components v adresáři slides
+slides/**/components/
+
+# Ignorovat setup v adresáři slides
+slides/**/setup/
+
+# Ignorovat soubory global_bottom.vue v adresáři slides
+slides/**/global_bottom.vue
+# use pnpm-lock
+yarn.lock

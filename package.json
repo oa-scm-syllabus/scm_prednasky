@@ -1,0 +1,43 @@
+{
+  "name": "scm_prednasky",
+  "description": "Přednášky SCM",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "zx ./scripts/build.js",
+    "postbuild": "node scripts/build-index.js",
+    "buildindex": "node scripts/build-index.js",
+    "clean": "node ./scripts/clean.js",
+    "export": "pnpm -r run export --with-clicks --wait-until none"
+  },
+  "subPackages": [
+    "slides/*"
+  ],
+  "packageManager": "pnpm@10.15.0",
+  "devDependencies": {
+    "@slidev/cli": "^52.1.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/types": "^52.1.0",
+    "@iconify-json/material-symbols": "^1.2.33",
+    "@iconify-json/mdi": "^1.2.3",
+    "fs-extra": "^11.3.1",
+    "playwright": "^1.55.0",
+    "playwright-chromium": "^1.55.0",
+    "plop": "^4.0.1",
+    "rimraf": "^6.0.1",
+    "shiki": "^3.12.0",
+    "zx": "^8.8.1"
+  },
+  "keywords": [
+    "scm",
+    "git",
+    "github",
+    "pva",
+    "prednasky",
+    "vyuka",
+    "oa",
+    "oaopava"
+  ],
+  "author": "Adam Fišer <adam.fiser@wanex.cz>",
+  "license": "CC BY-NC 4.0"
+}

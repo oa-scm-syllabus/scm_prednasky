@@ -1,0 +1,13 @@
+{
+  "name": "21_git_pokrocile",
+  "title": "GIT pokročilé",
+  "author": { "name": "Adam Fišer" },
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export --output ../21_git_pokrocile.pdf"
+  }
+}
