@@ -71,6 +71,7 @@ layout: two-cols-header
 - Oddělení odstavců se provádí prázdným řádkem.
 - Nadpisy se používají pro strukturování obsahu
 - Úroveň nadpisu určuje znak `#`
+- Mezi znakem `#` a textem vždy mezera
 
 
 
@@ -95,32 +96,42 @@ layout: two-cols-header
 ###### H6
 
 ---
-layout: default
+layout: two-cols-header
 ---
 
 # Odstavce
 
+- Před začátkem odstavce je vždy prázdný řádek.
 - Odstavec textu začíná na novém řádku.
-- Oddělení odstavců se provádí prázdným řádkem.
 
+::left::
 
 ### Syntaxe
+
 ```markdown
-První řádek dlouhého textu.
-Druhý řádek odstavce.
+# Nadpis
 
-Třetí řádek kódu, první řádek druhého odstavce.
+První řádek prvního odstavce dlouhého textu.
+Druhý řádek prvního odstavce.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis vehicula elementum. Morbi porta molestie lorem, vitae congue augue semper sit amet. Praesent malesuada facilisis imperdiet. 
+První řádek druhého odstavce.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 ```
 
+::right::
+
 ### Náhled
-První řádek dlouhého textu.
-Druhý řádek odstavce
 
-Třetí řádek kódu, první řádek druhého odstavce.
+<b>Nadpis</b>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis vehicula elementum. Morbi porta molestie lorem, vitae congue augue semper sit amet. Praesent malesuada facilisis imperdiet. 
+
+První řádek prvního odstavce dlouhého textu.
+Druhý řádek prvního odstavce.
+
+První řádek druhého odstavce.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
 
 
 ---
@@ -136,7 +147,7 @@ layout: two-cols-header
 ::left::
 
 ## Syntaxe
-```markdown
+```md
 **Tučný text**
 *Kurzíva*
 ***Tučná kurzíva***
@@ -146,6 +157,7 @@ layout: two-cols-header
 ## Náhled:
 - **Tučný text**
 - *Kurzíva*
+- ***Tučná kurzíva***
 - ~~Přeškrtnutý text~~
 
 ---
@@ -158,23 +170,29 @@ background: 'https://cover.sli.dev'
 layout: two-cols-header
 ---
 # Nečíslované seznamy
-- Syntax: `-`, `*`, nebo `+`
-- Podřízená položka je odsazena
+- Syntax: `-`, alternativně `*`, nebo `+`
+- Podřízená položka je odsazena (dvě mezery nebo tabulátor)
 
 
 ::left::
 ## Syntaxe:
 ```md
-- Nečíslovaný seznam:
-  - Položka 1
-  - Položka 2
+- Položka 1 nečíslovaného seznamu:
+    - Položka 1.1
+    - Položka 1.2
+        - Položka 1.2.1
+        - Položka 1.2.2
+- Položka 2
 ```
 
 ::right::
 ## Náhled:
-- Nečíslovaný seznam:
-  - Položka 1
-  - Položka 2
+- Položka 1 nečíslovaného seznamu:
+  - Položka 1.1
+  - Položka 1.2
+    - Položka 1.2.1
+    - Položka 1.2.2
+- Položka 2
 
 ---
 layout: two-cols-header
@@ -205,14 +223,14 @@ background: 'https://cover.sli.dev'
 layout: default
 ---
 # Zdrojový kód
-- Píše se pomocí symbolu ` (backtick)
+- Píše se pomocí symbolu <kbd>`</kbd> (backtick)
 
 <v-click>
 
 ## Jak napsat backtick
-- QWERTY US klávesnice: <kbd>`</kbd> (vedle klávesy 1)
 - QWERTZ CZ klávesnice: <kbd>AltGr</kbd> + <kbd>7</kbd>
-- Alternativně podržet <kbd>Alt</kbd> + <kbd>096</kbd>
+- QWERTY US klávesnice: <kbd>`</kbd> (vedle klávesy 1)
+- Alternativně číselným kódem znaku <kbd>Alt</kbd> + <kbd>096</kbd>
 
 </v-click>
 
@@ -223,7 +241,7 @@ layout: default
 
 </v-click>
 ---
-layout: default
+layout: two-cols
 ---
 # Bloky kódu
 
@@ -236,22 +254,40 @@ layout: default
 <v-click>
 
 - Blok kódu s podporou syntax higlihtingu:
-  ````python
-  ```python
-  print("Hello world")
-  ```
-  ````
+  - Python kód:
+    ````python
+    ```python
+    print("Hello world")
+    ```
+    ````
+  - Markdown kód:
+    ````md
+    ```md
+    # Nadpis
+    
+    odstavec
+    ```
+    ````
   
 </v-click>
 
+::right::
+
 <v-click>
+
 - Specialita: Zobrazení bloku kódu v md syntaxi (tzn. předchozí blok)
-  ````md
-  ````md
-  ```python
-  print("Hello world")
-  ``` 
+  - Použvá se použití více backticků (```````), aby se odlišil blok kódu od samotného kódu uvnitř
+  - Markdown kód:
+    ``````md
+    ````md
+    ```python
+    print("Hello world")
+    ```  
+    ````
+    ```````
+
 </v-click>
+
 ---
 layout: default
 ---
@@ -292,13 +328,15 @@ layout: two-cols-header
   [1]: https://github.com
 
 ---
-layout: default
+layout: two-cols-header
 ---
 # Tabulky
 - Svislítko `|` <kbd>AltGr</kbd> + <kbd>w</kbd>odděluje buňky
 - První řádek obsahuje hlavičky
 - Druhý řádek odděluje hlavičky od obsahu
 - Dále následují řádky s daty
+
+::left::
 
 ## Syntaxe
   ```md
@@ -307,6 +345,8 @@ layout: default
   | Řádek 1    | Data 1     |
   | Řádek 2    | Data 2     |
   ```
+
+::right::
 
 ## Náhled
 | Hlavička 1 | Hlavička 2 |
@@ -333,6 +373,12 @@ layout: two-cols-header
     > Toto je citace
   ```
 
+- Víceřádková citace:
+  ```md
+    > První řádek citace<kbd>space</kbd><kbd>space</kbd>  
+    Druhý řádek citace
+  ```
+
 ::right::
 ## Ukázka:
 - Check boxy:
@@ -341,6 +387,9 @@ layout: two-cols-header
 - Citace:
   > Toto je citace
 
+- Víceřádková citace:
+  > První řádek citace  
+  Druhý řádek citace
 ---
 layout: cover
 background: 'https://cover.sli.dev'
