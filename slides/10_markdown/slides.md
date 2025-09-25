@@ -160,6 +160,7 @@ layout: two-cols-header
 - ***Tučná kurzíva***
 - ~~Přeškrtnutý text~~
 
+- `~` - <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>1</kbd>
 ---
 layout: cover
 background: 'https://cover.sli.dev'
