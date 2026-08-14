@@ -31,35 +31,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      # pnpm/setup nahrazuje pnpm/action-setup i actions/setup-node:
+      # nainstaluje pnpm (verze se bere z pole packageManager v package.json),
+      # k tomu Node runtime a rovnou spustí `pnpm install`.
+      - name: Setup pnpm + Node
+        uses: pnpm/setup@v2
         with:
-          node-version: "20"
-          cache: "pnpm"
+          runtime: node@22
+          cache: true
 
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v4
-
-      - name: Install Playwright
-        run: pnpm add playwright -w
+        uses: actions/configure-pages@v6
 
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps
-
-#      - name: Install playwright
-#        run: pnpm exec playwright install
-
-#      - name: Install playwright
-#        run: pnpm playwright install --with-deps
-
-      - name: Install dependencies
-        run: pnpm i
 
       - name: Build
         run: pnpm build
@@ -67,7 +55,7 @@ jobs:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./dist
 
@@ -81,4 +69,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
