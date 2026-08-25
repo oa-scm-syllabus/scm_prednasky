@@ -1,26 +1,28 @@
+# Závislosti a build výstupy
 node_modules
 dist
 .site
-.DS_Store
-dist
-*.local
-.vite-inspect
-.remote-assets
-components.d.ts
 *-export*
 *.pdf
 *.pptx
 
-# Ignorovat node_modules v adresáři slides
+# Nástroje a cache
+.vite-cache
+.vite-inspect
+.remote-assets
+.codegraph
+components.d.ts
+
+# Slidev generuje tyto soubory v jednotlivých přednáškách během buildu
 slides/**/node_modules/
-
-# Ignorovat components v adresáři slides
 slides/**/components/
-
-# Ignorovat setup v adresáři slides
 slides/**/setup/
-
-# Ignorovat soubory global_bottom.vue v adresáři slides
 slides/**/global_bottom.vue
-# use pnpm-lock
+
+# Projekt používá pnpm-lock.yaml
 yarn.lock
+package-lock.json
+
+# Lokální a systémové
+*.local
+.DS_Store

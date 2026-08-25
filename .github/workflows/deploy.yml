@@ -1,4 +1,4 @@
-﻿# Based on https://github.com/actions/starter-workflows/blob/main/pages/gatsby.yml
+# Based on https://github.com/actions/starter-workflows/blob/main/pages/gatsby.yml
 name: CD Deploy page to Github Pages
 
 on:
