@@ -1,2 +1,11 @@
 packages:
   - "slides/*"
+
+# pnpm 11+ už nečte tato nastavení z .npmrc, patří sem.
+shamefullyHoist: true
+autoInstallPeers: true
+
+# pnpm 11+ vyžaduje explicitní souhlas s postinstall skripty závislostí.
+# playwright-chromium jím stahuje browser binárky.
+allowBuilds:
+  playwright-chromium: true
