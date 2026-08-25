@@ -46,8 +46,10 @@ jobs:
         id: pages
         uses: actions/configure-pages@v6
 
+      # Slidev generuje PDF ke stažení přes modul playwright-chromium,
+      # takže stačí chromium — bez argumentu by se táhl i firefox a webkit.
       - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps
+        run: pnpm exec playwright install --with-deps chromium
 
       - name: Build
         run: pnpm build
