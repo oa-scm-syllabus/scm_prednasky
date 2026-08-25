@@ -164,7 +164,7 @@ Image Sizes
 - `slidev --entry slides\01_uvod_do_python.md` 
 - `monochrome icons`
 - Install dependencies with `pnpm install`.
-- Generate a new talk with `pnpm generate`.
+- Novou přednášku založ zkopírováním adresáře `slides/00_skeleton/`.
 
 ChatGPT image prompt
 A highly detailed digital illustration of a blue humanoid lizard wearing a blue hoodie with orange accents, sitting at a wooden desk and typing on a laptop. 
