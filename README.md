@@ -1,5 +1,7 @@
 # Seznam přednášek
 
+> **⚠️ Tento repozitář je archivován.** Přednášky SCM se dál udržují ve sloučeném monorepu [`oa-syllabus/prednasky`](https://github.com/oa-syllabus/prednasky) — aktuální verze je na [oa-syllabus.github.io/prednasky/scm/](https://oa-syllabus.github.io/prednasky/scm/). Tento repozitář se dál needituje.
+
 | # | Přednáška | PDF |
 |---:|-----------|-----|
 | 1 | [Markdown syntaxe](https://oa-scm-syllabus.github.io/scm_prednasky/10_markdown/) | [PDF](https://oa-scm-syllabus.github.io/scm_prednasky/10_markdown/10_markdown.pdf) |
